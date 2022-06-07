@@ -8,4 +8,4 @@
     Scenario: Download the Deposit Account Rates
       Given Chris entered in the banistmo page
       When he download the Deposit Account Rates
-      Then he should read the Deposit Account Rates corectly
+      Then he should read the Deposit Account Rates correctly

@@ -2,10 +2,9 @@ package userinterfaces;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
 
-import static net.serenitybdd.screenplay.targets.Target.*;
-import static org.openqa.selenium.By.*;
+import static net.serenitybdd.screenplay.targets.Target.the;
+import static org.openqa.selenium.By.xpath;
 
 public class TariffsSection extends PageObject {
     public static final Target DEPOSIT_ACCOUNT_RATES_BUTTOM = the("deposit account rates buttom")

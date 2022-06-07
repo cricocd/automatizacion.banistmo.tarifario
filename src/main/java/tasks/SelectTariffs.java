@@ -3,17 +3,12 @@ package tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-import org.apache.tools.ant.taskdefs.Tar;
-import userinterfaces.BanistmoHomePage;
-import userinterfaces.TariffsSection;
 
-import static net.serenitybdd.screenplay.actions.Click.*;
+import static net.serenitybdd.screenplay.actions.Click.on;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static net.serenitybdd.screenplay.waits.WaitUntil.*;
-import static userinterfaces.BanistmoHomePage.*;
-import static userinterfaces.TariffsSection.*;
+import static net.serenitybdd.screenplay.waits.WaitUntil.the;
+import static userinterfaces.BanistmoHomePage.TARIFFS_BUTTOM;
+import static userinterfaces.TariffsSection.DEPOSIT_ACCOUNT_RATES_BUTTOM;
 
 public class SelectTariffs implements Task {
 

@@ -5,8 +5,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import interactions.ReadPdf;
-import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.util.EnvironmentVariables;
 import questions.DepositAccountRates;
@@ -15,10 +13,8 @@ import tasks.SelectTariffs;
 
 import java.io.IOException;
 
-import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.*;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class TariffsStepDefinitons {
 
@@ -49,8 +45,8 @@ public class TariffsStepDefinitons {
 
     }
 
-    @Then("^he should read the Deposit Account Rates corectly$")
-    public void heShouldReadTheDepositAccountRatesCorectly() throws IOException {
+    @Then("^he should read the Deposit Account Rates correctly$")
+    public void heShouldReadTheDepositAccountRatesCorrectly() throws IOException {
         String statementFilePath = String.format("%s/%s", downloadFolder, fileName);
         theActorInTheSpotlight().whoCan(ReadPdf.downloadedInPath(statementFilePath));
         String pdfText = ReadPdf.as(theActorInTheSpotlight()).getText();

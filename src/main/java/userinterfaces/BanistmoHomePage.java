@@ -3,10 +3,9 @@ package userinterfaces;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.openqa.selenium.By;
 
-import static net.serenitybdd.screenplay.targets.Target.*;
-import static org.openqa.selenium.By.*;
+import static net.serenitybdd.screenplay.targets.Target.the;
+import static org.openqa.selenium.By.xpath;
 
 @DefaultUrl("https://www.banistmo.com/wps/portal/banistmo/personas/")
 
