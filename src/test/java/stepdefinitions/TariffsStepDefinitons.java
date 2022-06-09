@@ -18,9 +18,10 @@ import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class TariffsStepDefinitons {
 
-    private EnvironmentVariables environmentVariables;
-    String downloadFolder;
-    String fileName;
+//    private EnvironmentVariables environmentVariables;
+//    String downloadFolder;
+//    String fileName;
+    
 
     @Before
     public void setStage(){
@@ -30,12 +31,14 @@ public class TariffsStepDefinitons {
 
     @Given("^Chris entered in the banistmo page$")
     public void chrisEnteredInTheBanistmoPage() {
-        downloadFolder = environmentVariables.optionalProperty("download.filesFolder")
-                .orElseThrow(IllegalArgumentException::new);
+//        downloadFolder = environmentVariables.optionalProperty("download.filesFolder")
+//                .orElseThrow(IllegalArgumentException::new);
+//
+//        fileName = environmentVariables.optionalProperty("statements.fileName")
+//                .orElseThrow(IllegalArgumentException::new);
 
-        fileName = environmentVariables.optionalProperty("statements.fileName")
-                .orElseThrow(IllegalArgumentException::new);
         theActorInTheSpotlight().wasAbleTo(Open.banistmoHomePage());
+
     }
 
 
@@ -47,8 +50,8 @@ public class TariffsStepDefinitons {
 
     @Then("^he should read the Deposit Account Rates correctly$")
     public void heShouldReadTheDepositAccountRatesCorrectly() throws IOException {
-        String statementFilePath = String.format("%s/%s", downloadFolder, fileName);
-        theActorInTheSpotlight().whoCan(ReadPdf.downloadedInPath(statementFilePath));
+//        String statementFilePath = String.format("%s/%s", downloadFolder, fileName);
+        theActorInTheSpotlight().whoCan(ReadPdf.downloadedInPath());
         String pdfText = ReadPdf.as(theActorInTheSpotlight()).getText();
         theActorInTheSpotlight().should(seeThat(DepositAccountRates.isCorrect(pdfText)));
     }
